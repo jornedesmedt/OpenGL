@@ -40,10 +40,24 @@ namespace test
 		{
 			m_CurrentTest->OnImGuiRender();
 			//Render back button
+			if (ImGui::Button("Back", ImVec2(100, 50)))
+			{
+				delete m_CurrentTest;
+				m_CurrentTest = NULL;
+			}
 		}
 		else
 		{
 			//Render menu
+			std::map<std::string, TestCreator>::iterator it = m_Menu->begin();
+			while (it != m_Menu->end())
+			{
+				if (ImGui::Button(it->first.c_str(), ImVec2(100, 50)))
+				{
+					m_CurrentTest = it->second();
+				}
+				it++;
+			}
 		}
 	}
 }

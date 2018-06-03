@@ -22,6 +22,7 @@
 #include "imgui/imgui_impl_glfw_gl3.h"
 
 #include "tests/TestClearColor.h"
+#include "tests/TestMenu.h"
 
 
 int main(void)
@@ -66,7 +67,7 @@ int main(void)
 		ImGui_ImplGlfwGL3_Init(window, true);
 		ImGui::StyleColorsDark();
 
-		test::TestClearColor test;
+		test::TestMenu test;
 
 		while (!glfwWindowShouldClose(window))
 		{
