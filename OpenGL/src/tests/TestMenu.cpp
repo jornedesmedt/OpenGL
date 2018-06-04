@@ -1,5 +1,7 @@
 #include "TestMenu.h"
 #include "TestClearColor.h"
+#include "TestTriangle.h"
+
 #include "imgui/imgui.h"
 
 #define CREATE_TEST(test) []() -> Test* {return new test();}
@@ -10,6 +12,7 @@ namespace test
 		: m_CurrentTest(NULL), m_Menu(new std::map<std::string, TestCreator>())
 	{
 		m_Menu->emplace("Clear Color", CREATE_TEST(TestClearColor));
+		m_Menu->emplace("Triangle", CREATE_TEST(TestTriangle));
 	}
 
 	TestMenu::~TestMenu()
@@ -31,6 +34,10 @@ namespace test
 		if (m_CurrentTest != NULL)
 		{
 			m_CurrentTest->OnRender();
+		}
+		else
+		{
+			GLCall(glClearColor(0.0f, 0.0f, 0.0f, 0.0f));
 		}
 	}
 
