@@ -35,10 +35,6 @@ namespace test
 		{
 			m_CurrentTest->OnRender();
 		}
-		else
-		{
-			GLCall(glClearColor(0.0f, 0.0f, 0.0f, 0.0f));
-		}
 	}
 
 	void TestMenu::OnImGuiRender()

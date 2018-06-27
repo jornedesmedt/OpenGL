@@ -71,6 +71,7 @@ int main(void)
 
 		while (!glfwWindowShouldClose(window))
 		{
+			GLCall(glClearColor(0.0f, 0.0f, 0.0f, 1.0f));
 			renderer.Clear();
 
 			test.OnUpdate(0.0f);
