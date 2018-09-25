@@ -1,6 +1,7 @@
 #include "TestMenu.h"
 #include "TestClearColor.h"
 #include "TestTriangle.h"
+#include "TestTexture2D.h"
 
 #include "imgui/imgui.h"
 
@@ -13,6 +14,7 @@ namespace test
 	{
 		m_Menu->emplace("Clear Color", CREATE_TEST(TestClearColor));
 		m_Menu->emplace("Triangle", CREATE_TEST(TestTriangle));
+		m_Menu->emplace("Texture2D", CREATE_TEST(TestTexture2D));
 	}
 
 	TestMenu::~TestMenu()
